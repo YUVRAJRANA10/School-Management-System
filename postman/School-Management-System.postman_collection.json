@@ -50,6 +50,69 @@
       }
     },
     {
+      "name": "Add School - Central High",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Central High School\",\n  \"address\": \"Connaught Place, New Delhi\",\n  \"latitude\": 28.6315,\n  \"longitude\": 77.2167\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": ["{{baseUrl}}"],
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
+      "name": "Add School - Green Valley",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Green Valley Academy\",\n  \"address\": \"Gurugram, Haryana\",\n  \"latitude\": 28.4595,\n  \"longitude\": 77.0266\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": ["{{baseUrl}}"],
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
+      "name": "Add School - Riverside",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Riverside Public School\",\n  \"address\": \"Noida Sector 62\",\n  \"latitude\": 28.6304,\n  \"longitude\": 77.3725\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": ["{{baseUrl}}"],
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
       "name": "List Schools",
       "request": {
         "method": "GET",
