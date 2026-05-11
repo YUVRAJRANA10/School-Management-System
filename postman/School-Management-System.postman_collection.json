@@ -1,0 +1,65 @@
+{
+  "info": {
+    "name": "School Management System",
+    "_postman_id": "f3e4a7e1-2f7c-4d2e-9d1b-9b9b0b6c3c10",
+    "description": "API collection for School Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"ABC Public School\",\n  \"address\": \"Sector 10, Noida\",\n  \"latitude\": 28.6,\n  \"longitude\": 77.3\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/addSchool",
+          "host": ["{{baseUrl}}"],
+          "path": ["addSchool"]
+        }
+      }
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/listSchools?latitude=28.6&longitude=77.3",
+          "host": ["{{baseUrl}}"],
+          "path": ["listSchools"],
+          "query": [
+            { "key": "latitude", "value": "28.6" },
+            { "key": "longitude", "value": "77.3" }
+          ]
+        }
+      }
+    }
+  ]
+}
