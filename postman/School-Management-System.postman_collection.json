@@ -8,6 +8,10 @@
   "variable": [
     {
       "key": "baseUrl",
+      "value": "https://school-management-system-v1pw.onrender.com"
+    },
+    {
+      "key": "localBaseUrl",
       "value": "http://localhost:3000"
     }
   ],
@@ -58,6 +62,18 @@
             { "key": "latitude", "value": "28.6" },
             { "key": "longitude", "value": "77.3" }
           ]
+        }
+      }
+    },
+    {
+      "name": "List All Schools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/schools",
+          "host": ["{{baseUrl}}"],
+          "path": ["schools"]
         }
       }
     }

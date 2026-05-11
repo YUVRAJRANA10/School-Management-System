@@ -81,7 +81,20 @@ const listSchools = async (req, res, next) => {
 	}
 };
 
+const listAllSchools = async (req, res, next) => {
+	try {
+		const listSql =
+			"SELECT id, name, address, latitude, longitude, created_at FROM schools ORDER BY id ASC";
+		const [rows] = await pool.execute(listSql);
+
+		return successResponse(res, 200, "All schools", rows);
+	} catch (err) {
+		return next(err);
+	}
+};
+
 module.exports = {
 	addSchool,
 	listSchools,
+	listAllSchools,
 };
