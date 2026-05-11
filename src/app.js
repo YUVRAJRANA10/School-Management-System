@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const pool = require("./db/pool");
+const schoolRoutes = require("./routes/school.routes");
+const errorHandler = require("./middleware/errorHandler");
 
 dotenv.config();
 
@@ -25,6 +27,10 @@ app.get("/health", async (req, res, next) => {
 		return next(err);
 	}
 });
+
+app.use("/", schoolRoutes);
+
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
