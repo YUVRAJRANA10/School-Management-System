@@ -7,6 +7,7 @@ const password = process.env.DB_PASSWORD;
 const database = process.env.DB_NAME;
 const useSsl =
 	process.env.DB_SSL === "true" || /aivencloud\.com$/i.test(host || "");
+const rejectUnauthorized = process.env.DB_SSL_REJECT_UNAUTHORIZED !== "false";
 
 const pool = mysql.createPool({
 	host,
@@ -17,7 +18,7 @@ const pool = mysql.createPool({
 	waitForConnections: true,
 	connectionLimit: 10,
 	queueLimit: 0,
-	ssl: useSsl ? { rejectUnauthorized: true } : undefined,
+	ssl: useSsl ? { rejectUnauthorized } : undefined,
 });
 
 module.exports = pool;

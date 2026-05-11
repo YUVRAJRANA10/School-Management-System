@@ -2,11 +2,12 @@ const express = require("express");
 const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
+
+dotenv.config();
+
 const pool = require("./db/pool");
 const schoolRoutes = require("./routes/school.routes");
 const errorHandler = require("./middleware/errorHandler");
-
-dotenv.config();
 
 const app = express();
 
